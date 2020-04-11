@@ -17,7 +17,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-@SpringBootTest(args = "example.xml")
+@SpringBootTest(args = "example.xml",
+                properties = { "spring.datasource.url=jdbc:postgresql://localhost:5432/restboxesdb" })
 @AutoConfigureMockMvc
 class RestBoxesApplicationTests {
 

@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: "postgres"
+    env_file:
+    - database.env
+  rest-boxes:
+    image: rest-boxes-app:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+    - "8080:8080"
