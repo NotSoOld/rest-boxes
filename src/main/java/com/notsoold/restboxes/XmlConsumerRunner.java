@@ -42,8 +42,9 @@ public class XmlConsumerRunner implements CommandLineRunner {
 	    throw new IllegalArgumentException("No XML file name provided!");
 	}
 	String xmlFilename = args[0];
+	// Get XML file as DOM.
 	Element storageElement = xmlFileToRootElement(xmlFilename);
-
+	// Process its contents.
 	processXmlTreeRecurisvely(storageElement, null);
     }
 
@@ -77,7 +78,7 @@ public class XmlConsumerRunner implements CommandLineRunner {
     }
 
     /**
-     * It's 'public static' because it can be reused for general XML file parsing.
+     * Note: it's 'public static' because it can be reused for general XML file parsing.
      */
     public static Element xmlFileToRootElement(String xmlFilename) throws Exception {
 	// Read config from file and strip all newlines and whitespaces.
