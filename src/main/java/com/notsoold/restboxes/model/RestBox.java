@@ -34,4 +34,8 @@ public class RestBox {
     public void setContainedIn(RestBox containedIn) {
         this.containedIn = containedIn;
     }
+
+    @Override public boolean equals(Object obj) {
+        return obj instanceof RestBox && ((RestBox)obj).getId().equals(this.id);
+    }
 }

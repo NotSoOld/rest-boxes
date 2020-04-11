@@ -54,4 +54,11 @@ public class RestItem {
 	this.containedIn = containedIn;
     }
 
+    @Override public boolean equals(Object obj) {
+	if (!(obj instanceof RestItem)) {
+	    return false;
+	}
+	RestItem other = (RestItem)obj;
+	return other.getId().equals(this.id) && other.getColor().equals(this.color);
+    }
 }
